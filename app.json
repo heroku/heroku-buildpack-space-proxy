@@ -1,0 +1,29 @@
+{
+  "name": "space-proxy",
+  "description": "nginx proxy to arbitrary in-space dynos",
+  "keywords": [
+    "private-spaces",
+    "dns-discovery"
+  ],
+  "repository": "https://github.com/heroku/heroku-buildpack-space-proxy",
+  "env": {
+    "SPACE_PROXY_BASIC_AUTH": {
+      "description": "nginx basic auth",
+      "value": "space:{PLAIN}proxy"
+    },
+
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "Private-S"
+    },
+
+  },
+  "image": "heroku/cedar-14",
+  "buildpacks": [
+    {
+      "url": "http://github.com/kr/heroku-buildpack-inline.git"
+    }
+  ]
+}

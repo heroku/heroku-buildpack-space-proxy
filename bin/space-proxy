@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# bin/space-proxy
+# generate nginx conf and run nginx
+
+echo "at=generate-nginx-conf"
+export DAEMON=off
+export RESOLVER=$(cat /etc/resolv.conf |grep -i nameserver|head -n1|cut -d ' ' -f2)
+erb /app/space-proxy/conf/nginx.conf.erb > /app/space-proxy/nginx/conf/nginx.conf
+erb /app/space-proxy/conf/htpasswd.erb > /app/space-proxy/nginx/conf/htpasswd
+cp /app/space-proxy/conf/mime.types /app/space-proxy/nginx/conf/mime.types
+cp /app/space-proxy/conf/set-backend.html /app/space-proxy/nginx/conf/set-backend.html
+echo "at=start-nginx"
+exec /app/space-proxy/nginx/bin/nginx -p /app/space-proxy/nginx -c /app/space-proxy/nginx/conf/nginx.conf
