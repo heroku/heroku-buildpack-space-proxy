@@ -45,7 +45,7 @@ http {
 		      <% if ENV['SPACE_PROXY_DEFAULT_BACKEND ']%>
 		      return 307 $scheme://$host/set-backend/<% ENV['SPACE_PROXY_DEFAULT_BACKEND']%>;
 		      <% else %>
-        	return 404 "No backend hit, please hit /set-backend/<dyno-dns-name:port> to connect to a backend";
+        	return 200 "No backend hit, please hit /set-backend/<dyno-dns-name:port> to connect to a backend";
         	<% end %>
       }
 		  resolver <%= ENV["RESOLVER"] %>;
