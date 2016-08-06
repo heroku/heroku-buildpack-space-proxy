@@ -6,8 +6,6 @@ requires: a private space with dns-discovery enabled, *NOTE* dont use the button
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/heroku/heroku-buildpack-space-proxy)
 
-Note: The rest of this readme assumes you have set your app name as `$app` in your shell, like so `app=my-proxy`.
-
 ### buildpack 
 
 this repo is usable as a buildpack. it will add an nginx proxy to your app, available at `space-proxy/bin/space-proxy`.
