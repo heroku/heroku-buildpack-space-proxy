@@ -43,7 +43,7 @@ http {
       auth_basic_user_file /app/space-proxy/nginx/conf/htpasswd;
 		  if ($http_cookie !~* "backend") {
 		      <% if ENV['SPACE_PROXY_DEFAULT_BACKEND']%>
-		      return 307 $scheme://$host/set-backend/<% ENV['SPACE_PROXY_DEFAULT_BACKEND']%>;
+		      return 307 $scheme://$host/set-backend/<%= ENV['SPACE_PROXY_DEFAULT_BACKEND'] %>;
 		      <% else %>
 		      add_header Content-Type text/plain;
         	return 200 "No backend hit, please hit /set-backend/<dyno-dns-name:port> to connect to a backend";
