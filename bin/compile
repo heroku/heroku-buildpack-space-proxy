@@ -31,7 +31,7 @@ mkdir -p $build_dir/space-proxy/nginx/logs
 mkdir -p $build_dir/space-proxy/bin
 mkdir -p $build_dir/space-proxy/conf
 cp $bp_dir/conf/* $build_dir/space-proxy/conf
-cp $bp_dir/bin/space-proxy/bin/space-proxy
+cp $bp_dir/bin/space-proxy/bin/space-proxy $build_dir/space-proxy/conf/bin
 $(fetch_nginx_tarball) | tar xzC $build_dir/space-proxy/nginx/bin
 echo " Done."
 
