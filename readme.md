@@ -12,3 +12,14 @@ this repo is usable as a buildpack. it will add an nginx proxy to your app, avai
 
 Add that command as the web process in your Procifle.
 
+Set the `SPACE_PROXY_BASIC_AUTH` in nginx format. e.g. `space:{PLAIN}proxy`
+
+```
+heroku config:set SPACE_PROXY_BASIC_AUTH=space:{PLAIN}proxy
+```
+
+Optionally set the `SPACE_PROXY_DEFAULT_BACKEND`
+
+```
+heroku config:set SPACE_PROXY_DEFAULT_BACKEND=1.service.other-app.app.localspace:8080
+```
