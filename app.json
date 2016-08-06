@@ -10,6 +10,10 @@
     "SPACE_PROXY_BASIC_AUTH": {
       "description": "nginx basic auth",
       "value": "space:{PLAIN}proxy"
+    },
+    "SPACE_PROXY_DEFAULT_BACKEND": {
+      "description": "default backend to proxy to, eg.  service.my-app.app.localspace:12345",
+      "required" : false
     }
   },
   "formation": {
