@@ -10,15 +10,13 @@
     "SPACE_PROXY_BASIC_AUTH": {
       "description": "nginx basic auth",
       "value": "space:{PLAIN}proxy"
-    },
-
+    }
   },
   "formation": {
     "web": {
       "quantity": 1,
       "size": "Private-S"
-    },
-
+    }
   },
   "image": "heroku/cedar-14",
   "buildpacks": [
