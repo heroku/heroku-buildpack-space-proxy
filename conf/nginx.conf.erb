@@ -49,7 +49,7 @@ http {
         	return 200 "No backend hit, please hit /set-backend/<dyno-dns-name:port> to connect to a backend";
         	<% end %>
       }
-		  resolver <%= ENV["RESOLVER"] %>;
+		  resolver <%= ENV['RESOLVER'] %>;
 		  proxy_pass         $scheme://$cookie_backend;
       proxy_redirect     off;
       proxy_set_header   Host $host;
