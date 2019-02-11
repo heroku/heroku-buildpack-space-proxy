@@ -8,7 +8,7 @@
         redirectURL = "/";
         function timedRedirect() {
             backend = getCookie("backend")
-            document.getElementById("content").innerHTML = "Set backend to " + backend + " redirecting in 3 seconds";
+            document.getElementById("content").textContent, = "Set backend to " + backend + " redirecting in 3 seconds";
             setTimeout("location.href = redirectURL;",redirectTime);
         }
 
