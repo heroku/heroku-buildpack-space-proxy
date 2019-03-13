@@ -33,6 +33,8 @@ http {
 		keepalive_timeout 5;
 
     location ~ /set-backend/(?<spark_backend>([^/]*))$ {
+      auth_basic           "spark-in-space";
+      auth_basic_user_file /app/space-proxy/nginx/conf/htpasswd;
       add_header Set-Cookie "backend=$spark_backend;Path=/";
       default_type "text/html";
       alias /app/space-proxy/nginx/conf/set-backend.html;
